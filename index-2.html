@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>FERM. Beringen | Restaurant en take-away aan de Stadswal</title>
+<meta name="description" content="Voorbeeldontwerp van TimmersDesign voor restaurant FERM. in Beringen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f1e8; --ink:#1c1a17; --muted:#6b645a; --line:#e2d9c9;
+  --accent:#b5472a; --accent-dark:#8f3620; --sage:#5f6b55;
+  --radius:14px; --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:300;letter-spacing:-.01em;line-height:1.05}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* demo banner */
+.demo{background:var(--ink);color:#e9e2d6;font-size:12px;text-align:center;padding:8px 16px;letter-spacing:.02em}
+.demo strong{color:#fff}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(246,241,232,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Fraunces',serif;font-weight:600;font-size:26px;letter-spacing:.04em}
+.logo span{color:var(--accent)}
+.menu{display:flex;gap:28px;font-size:14px;font-weight:500}
+.menu a{opacity:.8}
+.menu a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:12px 20px;border-radius:999px;font-weight:600;font-size:14px;transition:background .2s,transform .2s}
+.btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.burger{display:none;background:none;border:0;font-size:26px;cursor:pointer}
+
+/* hero: split, editorial */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;min-height:82vh;border-bottom:1px solid var(--line)}
+.hero-copy{padding:80px 48px 80px 0;display:flex;flex-direction:column;justify-content:center}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:22px}
+.hero h1{font-size:clamp(46px,7vw,92px);margin-bottom:26px}
+.hero h1 em{font-style:italic;color:var(--sage)}
+.lede{font-size:18px;color:var(--muted);max-width:46ch;margin-bottom:36px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.open-now{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);margin-top:28px}
+.dot{width:9px;height:9px;border-radius:50%;background:#2e9e5b;box-shadow:0 0 0 4px rgba(46,158,91,.18)}
+.hero-art{position:relative;background:
+  radial-gradient(circle at 30% 20%, #e7d7b8 0, transparent 40%),
+  radial-gradient(circle at 75% 70%, #c9a884 0, transparent 45%),
+  linear-gradient(160deg,#d9c3a1 0%,#9c7a5a 60%,#5b4435 100%);
+  overflow:hidden}
+.hero-art::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");mix-blend-mode:multiply}
+.plate{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(70%,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 35%,#fffaf2,#efe4d2 60%,#d9c8ad);box-shadow:0 40px 80px rgba(0,0,0,.35),inset 0 0 0 14px #f7f0e4,inset 0 0 0 16px #ded0b8}
+.plate::before{content:"";position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d8793f,#9c3f1f 70%,#6e2a14)}
+.plate::after{content:"";position:absolute;left:38%;top:32%;width:26%;height:14%;border-radius:50%;background:#7f9a62;transform:rotate(-20deg);box-shadow:40px 60px 0 -6px #e9c35c}
+.photo-note{position:absolute;bottom:18px;left:18px;font-size:11px;color:#fff;opacity:.75;background:rgba(0,0,0,.35);padding:6px 10px;border-radius:8px}
+
+/* info rail */
+.rail{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.rail div{padding:26px 20px;border-right:1px solid var(--line)}
+.rail div:last-child{border-right:0}
+.rail small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.rail b{font-weight:500;font-size:15px}
+
+/* section base */
+section{padding:96px 0}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(34px,4.5vw,56px)}
+.sec-head p{color:var(--muted);max-width:44ch}
+
+/* menu: tabs + two column list */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.tab{padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:14px;font-weight:500;cursor:pointer}
+.tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.panel{display:none;grid-template-columns:1fr 1fr;gap:0 64px}
+.panel.active{display:grid}
+.dish{display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px dashed var(--line)}
+.dish h4{font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin-bottom:4px}
+.dish p{font-size:14px;color:var(--muted)}
+.price{font-family:'Fraunces',serif;font-size:20px;white-space:nowrap;color:var(--accent)}
+.tag{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:#eee6d6;color:var(--sage);padding:3px 8px;border-radius:4px;margin-left:8px;vertical-align:middle}
+.menu-note{margin-top:28px;font-size:13px;color:var(--muted)}
+
+/* takeaway: three steps */
+.takeaway{background:var(--ink);color:#efe9dd}
+.takeaway .sec-head h2,.takeaway .sec-head p{color:inherit}
+.takeaway .sec-head p{opacity:.7}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:32px 28px}
+.step .num{font-family:'Fraunces',serif;font-size:48px;color:var(--accent);line-height:1;margin-bottom:16px}
+.step h3{font-size:24px;margin-bottom:10px;font-weight:600}
+.step p{opacity:.75;font-size:15px}
+.takeaway .btn{margin-top:40px}
+
+/* story: asymmetric */
+.story{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.story-art{aspect-ratio:4/5;border-radius:var(--radius);background:linear-gradient(170deg,#8aa07b,#4f5d47 70%,#2f3a2b);position:relative;overflow:hidden}
+.story-art::after{content:"FERM.";position:absolute;right:-10px;bottom:-26px;font-family:'Fraunces',serif;font-size:140px;color:rgba(255,255,255,.08);font-weight:600}
+.story h2{font-size:clamp(34px,4.5vw,56px);margin-bottom:22px}
+.story p{color:var(--muted);font-size:17px;margin-bottom:16px;max-width:52ch}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-size:26px;color:var(--ink);border-left:3px solid var(--accent);padding-left:18px;margin:28px 0}
+
+/* hours + map */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.hours li.today{font-weight:600}
+.hours li.closed span{color:var(--muted)}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:320px;background:#e9e1d1}
+.map iframe{width:100%;height:100%;min-height:320px;border:0;filter:grayscale(.3) contrast(1.05)}
+
+/* reserve form */
+.reserve{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+form{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:720px}
+label{font-size:13px;font-weight:500;display:flex;flex-direction:column;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+textarea{min-height:90px;resize:vertical}
+.full{grid-column:1/-1}
+.consent{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;font-size:13px;color:var(--muted)}
+.consent input{width:18px;height:18px;margin-top:2px}
+
+/* footer */
+footer{padding:56px 0 32px;font-size:14px;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.foot .logo{color:var(--ink)}
+.credit{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px}
+.credit a{text-decoration:underline}
+
+/* cookie */
+.cookie{position:fixed;bottom:16px;left:16px;right:16px;max-width:460px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:0 20px 50px rgba(0,0,0,.15);font-size:13px;z-index:60;display:none}
+.cookie.show{display:block}
+.cookie .row{display:flex;gap:10px;margin-top:12px}
+.cookie button{font:inherit;padding:9px 14px;border-radius:999px;border:1.5px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;font-weight:600}
+.cookie button.sec{background:transparent;color:var(--ink)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .menu,.nav .btn{display:none}
+  .burger{display:block}
+  .menu.open{display:flex;position:absolute;top:68px;left:0;right:0;background:var(--paper);flex-direction:column;padding:20px;border-bottom:1px solid var(--line)}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-copy{padding:56px 20px 40px}
+  .hero-art{min-height:360px}
+  .rail{grid-template-columns:1fr 1fr}
+  .rail div:nth-child(2){border-right:0}
+  .rail div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .panel{grid-template-columns:1fr}
+  .steps,.story,.visit{grid-template-columns:1fr}
+  .story-art{aspect-ratio:16/10}
+  form{grid-template-columns:1fr}
+  section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="demo">Voorbeeldontwerp van <strong>TimmersDesign</strong>. Teksten, prijzen en uren zijn voorbeelden en worden samen met u ingevuld.</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">FERM<span>.</span></a>
+    <nav class="menu" id="menu">
+      <a href="#kaart">De kaart</a>
+      <a href="#afhalen">Afhalen</a>
+      <a href="#verhaal">Over FERM.</a>
+      <a href="#bezoek">Bezoek</a>
+    </nav>
+    <a href="#reserveren" class="btn">Tafel reserveren</a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section class="hero wrap" style="padding:0">
+  <div class="hero-copy">
+    <div class="kicker">Restaurant en take-away, Beringen</div>
+    <h1>Eerlijk eten,<br><em>zonder gedoe.</em></h1>
+    <p class="lede">Seizoensgerechten aan de Stadswal, van donderdag tot zaterdag. Ter plaatse of thuis op de tafel: u kiest, wij koken.</p>
+    <div class="cta-row">
+      <a href="#afhalen" class="btn">Bestellen om af te halen</a>
+      <a href="#kaart" class="btn ghost">Bekijk de kaart</a>
+    </div>
+    <div class="open-now"><span class="dot"></span><span id="openTxt">Vandaag open van 17.30 tot 22.00 (voorbeelduren)</span></div>
+  </div>
+  <div class="hero-art">
+    <div class="plate"></div>
+    <div class="photo-note">Hier komt een eigen foto van het restaurant of een gerecht</div>
+  </div>
+</section>
+
+<div class="wrap rail">
+  <div><small>Adres</small><b>Stadswal 14, 3580 Beringen</b></div>
+  <div><small>Telefoon</small><b><a href="tel:+32478370238">0478 37 02 38</a></b></div>
+  <div><small>Open</small><b>Do, vr, za vanaf 17.30</b></div>
+  <div><small>Afhalen</small><b>Bestel voor 16.00 voor dezelfde avond</b></div>
+</div>
+
+<section id="kaart">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>De kaart van deze week</h2>
+      <p>De kaart wisselt met de seizoenen. Deze gerechten zijn voorbeelden, de echte kaart vult u zelf aan of wij doen het voor u.</p>
+    </div>
+    <div class="tabs rv">
+      <button class="tab active" data-t="voor">Om te beginnen</button>
+      <button class="tab" data-t="hoofd">Hoofdgerechten</button>
+      <button class="tab" data-t="zoet">Zoet</button>
+      <button class="tab" data-t="drank">Dranken</button>
+    </div>
+
+    <div class="panel active" id="p-voor">
+      <div class="dish"><div><h4>Gebrande paprika en burrata</h4><p>Met pompoenpitten en basilicumolie</p></div><div class="price">€ 13</div></div>
+      <div class="dish"><div><h4>Rundstartaar van het mes</h4><p>Eigeel, kappertjes, zuurdesem</p></div><div class="price">€ 15</div></div>
+      <div class="dish"><div><h4>Soep van het seizoen <span class="tag">Veggie</span></h4><p>Vraag naar de soep van vandaag</p></div><div class="price">€ 8</div></div>
+      <div class="dish"><div><h4>Gegrilde coquilles</h4><p>Bloemkoolcrème, hazelnoot</p></div><div class="price">€ 17</div></div>
+    </div>
+    <div class="panel" id="p-hoofd">
+      <div class="dish"><div><h4>Stoofvlees van FERM.</h4><p>Traag gegaard, met huisgemaakte frieten en mayonaise</p></div><div class="price">€ 21</div></div>
+      <div class="dish"><div><h4>Zeebaars op de huid</h4><p>Venkel, citroen, beurre blanc</p></div><div class="price">€ 26</div></div>
+      <div class="dish"><div><h4>Risotto van bospaddenstoelen <span class="tag">Veggie</span></h4><p>Oude kaas, truffelolie</p></div><div class="price">€ 19</div></div>
+      <div class="dish"><div><h4>Côte à l'os voor twee</h4><p>Belgisch witblauw, 900 g, met twee garnituren</p></div><div class="price">€ 68</div></div>
+    </div>
+    <div class="panel" id="p-zoet">
+      <div class="dish"><div><h4>Dame blanche</h4><p>Vanille-ijs, warme chocoladesaus</p></div><div class="price">€ 9</div></div>
+      <div class="dish"><div><h4>Appeltaart van het huis</h4><p>Met kaneelroom</p></div><div class="price">€ 8</div></div>
+      <div class="dish"><div><h4>Kaasplank</h4><p>Drie kazen van de boer, notenbrood</p></div><div class="price">€ 14</div></div>
+    </div>
+    <div class="panel" id="p-drank">
+      <div class="dish"><div><h4>Huiswijn, glas</h4><p>Wit, rood of rosé</p></div><div class="price">€ 5</div></div>
+      <div class="dish"><div><h4>Lokaal bier van het vat</h4><p>Vraag naar het bier van de maand</p></div><div class="price">€ 4,5</div></div>
+      <div class="dish"><div><h4>Verse munt thee</h4><p>Met honing</p></div><div class="price">€ 4</div></div>
+    </div>
+    <p class="menu-note">Allergenen? Vraag ernaar bij uw bestelling, wij helpen u graag verder.</p>
+  </div>
+</section>
+
+<section id="afhalen" class="takeaway">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Afhalen in drie stappen</h2>
+      <p>Geen app, geen account. U bestelt, wij bevestigen, u haalt op.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="num">1</div><h3>Kies uit de kaart</h3><p>Bestel via het formulier of bel ons. Voor 16.00 besteld is dezelfde avond klaar.</p></div>
+      <div class="step rv"><div class="num">2</div><h3>Wij bevestigen</h3><p>U krijgt een sms of mail met uw afhaaltijd. Zo wacht u nooit aan de toog.</p></div>
+      <div class="step rv"><div class="num">3</div><h3>Ophalen en genieten</h3><p>Alles zit verpakt om thuis nog even op te warmen. Betalen kan ter plaatse.</p></div>
+    </div>
+    <a href="#reserveren" class="btn rv">Bestelling doorgeven</a>
+  </div>
+</section>
+
+<section id="verhaal">
+  <div class="wrap story">
+    <div class="story-art rv"></div>
+    <div class="rv">
+      <div class="kicker">Over FERM.</div>
+      <h2>Klein, eerlijk en van hier.</h2>
+      <p>FERM. is een restaurant met een korte kaart en lange avonden. Wat we koken, komt zoveel mogelijk uit de streek, en wat we niet goed vinden, zetten we niet op tafel.</p>
+      <p class="pull">"Liever vier gerechten die kloppen dan veertig die het net niet zijn."</p>
+      <p>Drie dagen per week openen we de deuren, de andere dagen gebruiken we om in te kopen, te proeven en de kaart te vernieuwen. Zo blijft het voor ons leuk en voor u lekker.</p>
+    </div>
+  </div>
+</section>
+
+<section id="bezoek">
+  <div class="wrap">
+    <div class="sec-head rv"><h2>Kom langs</h2><p>Aan de Stadswal in het centrum van Beringen. Parkeren kan op de Markt, op twee minuten wandelen.</p></div>
+    <div class="visit">
+      <ul class="hours rv" id="hours">
+        <li data-d="1" class="closed"><span>Maandag</span><span>Gesloten</span></li>
+        <li data-d="2" class="closed"><span>Dinsdag</span><span>Gesloten</span></li>
+        <li data-d="3" class="closed"><span>Woensdag</span><span>Gesloten</span></li>
+        <li data-d="4"><span>Donderdag</span><span>17.30 tot 22.00</span></li>
+        <li data-d="5"><span>Vrijdag</span><span>17.30 tot 22.30</span></li>
+        <li data-d="6"><span>Zaterdag</span><span>17.30 tot 22.30</span></li>
+        <li data-d="0"><span>Zondag</span><span>11.30 tot 15.00</span></li>
+      </ul>
+      <div class="map rv">
+        <iframe loading="lazy" title="Kaart" src="https://www.google.com/maps?q=Stadswal+14,+3580+Beringen&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reserveren" class="reserve">
+  <div class="wrap">
+    <div class="sec-head rv"><h2>Reserveren of bestellen</h2><p>Vul het formulier in, wij bevestigen zo snel mogelijk. Liever bellen? 0478 37 02 38.</p></div>
+    <form class="rv" onsubmit="event.preventDefault();alert('Dit is een voorbeeld. Op de echte website komt uw aanvraag rechtstreeks bij FERM. terecht.')">
+      <label>Naam<input type="text" required placeholder="Uw naam"></label>
+      <label>Telefoon<input type="tel" required placeholder="04xx xx xx xx"></label>
+      <label>Wat wilt u?<select><option>Tafel reserveren</option><option>Bestelling afhalen</option></select></label>
+      <label>Datum en uur<input type="text" placeholder="bv. vrijdag 19.00"></label>
+      <label class="full">Bericht of bestelling<textarea placeholder="Aantal personen, gerechten, allergieën..."></textarea></label>
+      <label class="full consent"><input type="checkbox" required><span>Ik ga akkoord dat mijn gegevens gebruikt worden om mijn aanvraag te beantwoorden. <a href="https://timmersdesign.be/privacy.html" target="_blank" style="text-decoration:underline">Privacybeleid</a></span></label>
+      <div class="full"><button type="submit" class="btn">Verstuur aanvraag</button></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><div class="logo">FERM<span>.</span></div><p>Stadswal 14, 3580 Beringen<br>0478 37 02 38</p></div>
+      <div><p>Do, vr, za vanaf 17.30<br>Zo 11.30 tot 15.00<br>Ma, di, wo gesloten</p></div>
+      <div><p><a href="https://www.instagram.com/ferm.beringen" target="_blank">Instagram: ferm.beringen</a></p></div>
+    </div>
+    <div class="credit">
+      <span>Voorbeeldontwerp, niet de officiële website van FERM.</span>
+      <span>Website door <a href="https://timmersdesign.be" target="_blank">TimmersDesign</a> · <a href="https://timmersdesign.be/privacy.html" target="_blank">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie">
+  <strong>Cookies</strong><br>Deze voorbeeldsite gebruikt enkel een ingesloten kaart van Google Maps. Geen tracking.
+  <div class="row"><button onclick="ck(1)">Oké</button><button class="sec" onclick="ck(0)">Liever niet</button></div>
+</div>
+
+<script>
+// tabs
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');document.getElementById('p-'+t.dataset.t).classList.add('active');
+}));
+// today highlight
+const d=new Date().getDay();
+document.querySelectorAll('#hours li').forEach(li=>{if(+li.dataset.d===d)li.classList.add('today')});
+const closedToday=[1,2,3].includes(d);
+document.getElementById('openTxt').textContent=closedToday?'Vandaag gesloten, donderdag weer open (voorbeelduren)':'Vandaag open vanaf 17.30 (voorbeelduren)';
+if(closedToday)document.querySelector('.dot').style.background='#c0392b';
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// cookie
+function ck(v){try{localStorage.setItem('ferm_ck',v)}catch(e){}document.getElementById('cookie').classList.remove('show');if(!v){const m=document.querySelector('.map');m.innerHTML='<p style="padding:24px;color:#6b645a;font-size:14px">Kaart uitgeschakeld. Adres: Stadswal 14, 3580 Beringen.</p>'}}
+try{if(localStorage.getItem('ferm_ck')===null)document.getElementById('cookie').classList.add('show');else if(localStorage.getItem('ferm_ck')==='0')ck(0)}catch(e){document.getElementById('cookie').classList.add('show')}
+</script>
+</body>
+</html>
